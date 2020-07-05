@@ -1,5 +1,6 @@
 package com.heartbeat.watery.controller;
 
+import com.heartbeat.watery.model.Response;
 import com.heartbeat.watery.service.WaterfyCaller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ public class HeartbeatController {
     WaterfyCaller waterfyCaller;
 
     @GetMapping
-    public void check(){
-        waterfyCaller.check();
+    public Response check(){
+        return waterfyCaller.check();
     }
 }
